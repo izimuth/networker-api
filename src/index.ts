@@ -33,5 +33,5 @@ app.use('/delete', authMiddleware, deleteAccount);
 
 app.use('/qrcode', profileWeb);
 
-app.listen(3000);
+app.listen(parseInt(process.env.EXPRESS_PORT!, 10));
 
