@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
+    "server": "node ./build/index.js",
     "initdb": "ts-node ./src/db/init.ts",
     "seed": "ts-node ./src/db/seed.ts",
     "db": "ts-node ./src/db/db.ts",
