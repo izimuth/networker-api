@@ -13,6 +13,8 @@ export interface User
 	shareable_code: string;
 	is_visible: boolean;
 	is_active: boolean;
+	avatar_file: string;
+	following: string[];
 }
 
 export interface UserAuthToken
@@ -69,6 +71,7 @@ export function getUserJson(user: User): Partial<User>
 		is_visible: user.is_visible,
 		is_active: user.is_active,
 		shareable_code: user.shareable_code,
+		avatar_file: user.avatar_file,
 	}
 }
 

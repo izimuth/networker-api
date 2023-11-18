@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+	<link href="/static/profile.css" rel="stylesheet">
+	<title>Wrkr Profile: {PROFILE_DISPLAY_NAME}</title>
+</head>
+<body>
+	<main>
+		<div class="profile-card">
+			<div class="profile-avatar">{PROFILE_AVATAR}</div>
+			<div class="profile-body">
+				<div class="profile-name">{PROFILE_DISPLAY_NAME}</div>
+				
+				<div class="profile-app-cta">
+					To see this user's complete profile please scan the QR Code
+				</div>
+			</div>
+			<div class="profile-qrcode">
+				<img src="/getqrcode/{PROFILE_SHAREABLE_CODE}" width="160" height="160">
+			</div>
+		</div>
+
+		<div class="app-info">
+			Download the Wrkr app now!<br>
+			<a href="#"><img src="/static/appstore.svg" width="120" height="40"></a>
+		</div>
+	</main>
+</body>
+</html>

@@ -1,0 +1,95 @@
+
+body
+{
+	background-color: black;
+	color: #f4f4f4;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	margin: 20px;
+}
+
+.profile-card
+{
+	align-items: center;
+	background-color: #202020;
+	border-radius: 16px;
+	box-sizing: border-box;
+	display: flex;
+	gap: 32px;
+	margin: 40px auto 40px auto;
+	max-width: 1000px;
+	padding: 24px;
+}
+
+.profile-avatar
+{
+	flex-grow: 0;
+	flex-shrink: 0;
+	height: 160px;	
+	position: relative;
+	width: 160px;
+}
+
+.profile-avatar img
+{
+	border-radius: 50%;
+	display: block;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+	width: 100%;
+}
+
+.profile-avatar .avatar-text
+{
+	background: #ff00ff;
+	border-radius: 100%;
+	color: white;
+	height: 100%;
+	width: 100%;
+}
+
+.profile-body
+{
+	flex-grow: 1;
+	font-size: 16px;
+	font-weight: 300;
+}
+
+.profile-name
+{
+	font-size: 36px;
+	font-weight: 100;
+	line-height: 1em;
+	margin-bottom: 10px;
+}
+
+.profile-app-cta
+{
+	margin-bottom: 20px;
+}
+
+.app-info
+{
+	font-size: 20px;
+	font-weight: 100;
+	line-height: 2em;
+	text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+	.profile-card
+	{
+		flex-direction: column;
+	}
+
+	.profile-body
+	{
+		text-align: center;
+	}
+
+	.profile-app-cta
+	{
+		margin-bottom: 0px;
+	}
+}

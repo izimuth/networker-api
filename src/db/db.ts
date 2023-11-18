@@ -4,6 +4,8 @@ import sql from "./sql";
 
 // import migrations
 import createUsers from './migrate_create_users';
+import migrate1 from './migrate_add_avatar_field';
+import migrate2 from './migrate_create_links';
 
 interface Migration
 {
@@ -36,6 +38,8 @@ async function addMigrationRecord(notes: string, number: number)
 // create list of migrations
 const migrations: Migration[] = [
 	createUsers,
+	migrate1,
+	migrate2,
 ];
 
 const commands = {

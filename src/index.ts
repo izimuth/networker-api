@@ -2,23 +2,36 @@
 import 'dotenv/config';
 
 import express from 'express';
+import fileUpload from 'express-fileupload';
 
 import './types';
+import sql from './db/sql';
 import auth from './api/auth';
 import profile from './api/profile';
+import qrcode from './api/qrcode';
+import connections from './api/connections';
+import deleteAccount from './api/delete';
+import profileWeb from './web/profile';
 import { authMiddleware } from './users';
-import sql from './db/sql';
 
 const app = express();
 
+app.use('/static', express.static('static'));
 app.use(express.urlencoded());
 app.use(express.json());
-app.use(auth);
-app.use('/profile', authMiddleware, profile);
+app.use(fileUpload({
+	// useTempFiles: true,
+	// tempFileDir: '/tmp/'
+}));
 
-app.get('/', (req, res) => {
-	res.send({ hello: 'world' });
-});
+app.use('/auth', auth);
+app.use('/getqrcode', qrcode);
+
+app.use('/profile', authMiddleware, profile);
+app.use('/connections', authMiddleware, connections);
+app.use('/delete', authMiddleware, deleteAccount);
+
+app.use('/qrcode', profileWeb);
 
 app.listen(3000);
 

@@ -1,0 +1,26 @@
+version: "3.9"
+services:
+  node:
+    image: "node:18"
+    user: node
+    working_dir: /home/node/app
+    command: npm run dev
+    env_file:
+      - .env
+    volumes:
+      - ./:/home/node/app
+    ports:
+      - 3000:3000
+
+  networker_db:
+    image: postgres
+    container_name: networker_db
+    ports:
+      - 5432:5432
+    env_file:
+      - .env
+    volumes:
+      - networker_db:/var/lib/postgresql/data
+
+volumes:
+  networker_db:

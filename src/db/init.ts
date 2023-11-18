@@ -7,7 +7,7 @@ async function initDb()
 	try
 	{
 		// delete migration table if present
-		await sql`DROP TABLE IF EXISTS db_migrations;`
+		//await sql`DROP TABLE IF EXISTS db_migrations;`
 
 		// create migration tracking table
 		await sql`
