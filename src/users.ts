@@ -25,6 +25,14 @@ export interface UserAuthToken
 	expires_after: number;
 }
 
+export interface PasswordResetToken
+{
+	id: number;
+	user_id: number;
+	token_value: string;
+	expires_after: number;
+}
+
 export interface UserField
 {
 	id: number;
@@ -127,4 +135,9 @@ export async function authMiddleware(req: Request, res: Response, next: NextFunc
 		res.status(403);
 		res.send({ error: 'Auth token expired or invalid' });		
 	}
+}
+
+export function isValidPassword(pw: string)
+{
+	return pw.length >= 6;
 }

@@ -11,6 +11,7 @@ import profile from './api/profile';
 import qrcode from './api/qrcode';
 import connections from './api/connections';
 import deleteAccount from './api/delete';
+import passwordRecovery from './api/password-recovery';
 import profileWeb from './web/profile';
 import { authMiddleware } from './users';
 
@@ -26,6 +27,7 @@ app.use(fileUpload({
 
 app.use('/auth', auth);
 app.use('/getqrcode', qrcode);
+app.use('/recovery', passwordRecovery);
 
 app.use('/profile', authMiddleware, profile);
 app.use('/connections', authMiddleware, connections);

@@ -6,6 +6,7 @@ import sql from "./sql";
 import createUsers from './migrate_create_users';
 import migrate1 from './migrate_add_avatar_field';
 import migrate2 from './migrate_create_links';
+import migrate3 from './migrate_reset_tokens';
 
 interface Migration
 {
@@ -40,6 +41,7 @@ const migrations: Migration[] = [
 	createUsers,
 	migrate1,
 	migrate2,
+	migrate3,
 ];
 
 const commands = {
